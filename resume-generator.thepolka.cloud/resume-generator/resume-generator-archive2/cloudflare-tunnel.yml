@@ -1,0 +1,11 @@
+# cloudflare-tunnel.yml
+# Place this at: ~/.cloudflared/config.yml
+# After: cloudflared tunnel create resume-generator
+
+tunnel: resume-generator
+credentials-file: /home/YOUR_USER/.cloudflared/resume-generator.json
+
+ingress:
+  - hostname: resume-generator.thepolka.cloud
+    service: http://localhost:5000
+  - service: http_status:404
